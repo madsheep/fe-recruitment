@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-3">
+    Threads
+    <ul class="list-group">
+      <ng-container *ngFor="let thread of threads$ | async">
+        <li class="list-group-item" (click)="selectThread(thread.id)">{{thread.from}}</li>
+      </ng-container>
+    </ul>
+  </div>
+  <div class="col-9">
+    Selected:
+
+    {{selected$ | async | json}}
+  </div>
+</div>
